@@ -1,0 +1,18 @@
+body  {
+    height:100vh;
+    background-image:url("assets/fondoPantalla.png");
+   	background-repeat:no-repeat;
+   	background-size:100% 100%;
+}
+
+.fijo   {
+    position:sticky;
+    z-index:9000;
+    width:100%;
+    top:0;
+}
+
+.fijoAbajo  {
+    position:fixed;
+    bottom:0;
+}

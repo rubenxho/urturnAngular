@@ -1,0 +1,24 @@
+.main {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 375px) {
+.row {
+    margin-top: 10px;
+    align-content: center;
+    padding-bottom: 55px;
+}
+.main {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-left: 8px; */
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 55px;
+}

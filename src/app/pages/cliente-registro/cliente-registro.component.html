@@ -1,0 +1,143 @@
+<div class='container-fluid'>
+    <div class='row centrado'>
+        <div class='col-10 logoImagenResponsive centrado'></div>
+        <div class='col-4'></div>
+        <div class='col-4 logoImagen'></div>
+        <div class='col-4'></div>
+    </div>
+
+    <div class='recuadro programetas'>
+            
+    </div>
+
+    <div class='recuadro centrado bg-warning'>
+        <div class='imagenAmarilla'></div>
+    </div>
+
+    <div class='recuadro bg-success'>
+        <div class='row login'>
+            <label class='reclamo' for="login">Regístrate como Cliente</label>
+        </div>
+
+        <form [formGroup]='myForm'>
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="text"
+                            #nombre
+                            name='nombre' 
+                            formControlName='rsocial'
+                            class="form-control" 
+                            placeholder="Usuario" 
+                            aria-label="rsocial" 
+                            aria-describedby="basic-addon1" 
+                            [ngClass]="{'is-invalid':!rsocialValid}"
+                            on-keyup = validarUsername()/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="email" 
+                            #email
+                            name='email'
+                            formControlName='email'
+                            class="form-control"
+                            ngModel email="true" 
+                            placeholder="Email" 
+                            aria-label="Username" 
+                            aria-describedby="basic-addon1"
+                            [ngClass]="{'is-invalid':!emailValid}"
+                            on-keyup = validarEmail()/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="number" 
+                            #telefono
+                            name='telefono'
+                            formControlName='telefono'
+                            class="form-control" 
+                            placeholder="Teléfono" 
+                            aria-label="Username" 
+                            aria-describedby="basic-addon1" 
+                            [ngClass]="{'is-invalid':!telefonoValid}"
+                            on-keyup = validarTelefono()/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="password" 
+                            #password
+                            name='password'
+                            formControlName='password'
+                            class="form-control" 
+                            placeholder="Contraseña" 
+                            aria-label="Username" 
+                            aria-describedby="basic-addon1"
+                            [ngClass]=
+                                "{'is-invalid':passValid==false}"
+                            on-keyup = validarPassword()/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="password" 
+                            #repPassword
+                            class="form-control" 
+                            placeholder="Repetir contraseña" 
+                            aria-label="Username" 
+                            aria-describedby="basic-addon1"
+                            [ngClass]=
+                                "{'is-invalid':!validarRep(password.value, repPassword.value)}"
+                            on-keyup = "validarRep(password.value, repPassword.value)"/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <button type="button" class="btn btn-light" on-click='validar(nombre.value, email.value, telefono.value, password.value)'>Registrarse</button>
+            </div>
+        </form>
+
+        <label *ngIf='!rsocialValid' class='error'>
+            El campo usuario es obligatorio
+        </label>
+
+        <label *ngIf='rsocialValid && !emailValid' class='error'>
+            No has introducido un email válido
+        </label>
+
+        <label *ngIf='rsocialValid && emailValid && !telefonoValid' class='error'>
+            El teléfono debe contener 9 números
+        </label>
+
+        <label *ngIf='rsocialValid && emailValid && telefonoValid && !passValid' class='error'>
+            El password debe tener como mínimo 6 carateres
+        </label>
+    </div>
+
+    <div class='recuadro rosa'>
+        <div class='row centrado titulo_registro reclamo'>
+            Empresa
+        </div>
+    </div>
+
+    <div class='recuadro azulado centrado'>
+        <label for="registrate" class='reclamo'>Regístrate</label>
+    </div>
+
+    <div class='recuadro carnoso' on-click='redirigir("empresa-registro")'>
+        <div class='row centrado titulo_registro reclamo'>
+            Empresa
+        </div>
+    </div>
+
+    <div class='recuadro violeta centrado' on-click='redirigir("")'>
+        <label for="volver" class='reclamo flecha'><i class="fas fa-arrow-left"></i> Volver</label>
+    </div>
+
+    <div class='recuadro zapatilla'></div>
+</div>
+

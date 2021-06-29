@@ -1,0 +1,547 @@
+input[type='number']    {
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+    }
+    
+    .centrado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+
+    .logoImagen {
+        margin-top:30px;
+        height:80px;
+        border-radius:100px;
+        background-image:url("../../../assets/logo.png");
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    }
+    
+    .logo   {
+        margin-top:15px;
+        font-family: Abril Fatface;
+        font-size:70px;
+        color:#6c757d;
+    }
+    
+    .recuadro   {
+        position:absolute;
+        border-radius:20px;
+    }
+    
+    .programetas    {
+        display:none;
+        top:60px;
+        left:100px;
+        height:180px;
+        width:300px;
+        background-image:url("../../../assets/fila.png");
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    }
+    
+    .bg-warning {
+        top:120px;
+        left:100px;
+        width:300px;
+        height:325px;
+    }
+    
+    .imagenAmarilla {
+        width:100%;
+        height:100%;
+        background-image:url("../../../assets/gorra.png");
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size:auto 70%;
+        margin:0 auto;
+    }
+    
+    .reclamo    {
+        color:white;
+        font-weight:900;
+        font-size:25px;
+    }
+    
+    .bg-success {
+        top:120px;
+        left:430px;
+        height:425px;
+        width:555px;
+        text-align:center;
+    }
+    
+    .login   {
+        justify-content:center;
+        text-align:center;
+        align-items:center;
+        height:14.28%;
+        padding:4px;
+    }
+    
+    .input-group    {
+        width:60%;
+    }
+    
+    .btn-light   {
+        width:40%;
+        border-radius:5px;
+        border-style:solid;
+        border-color:grey;
+        border-width:1px;
+        font-weight:900;
+        color:#6c757d;
+    }
+    
+    .rosa   {
+        top:395px;
+        left:430px;
+        height:150px;
+        width:225px;
+        background-color:#ff4081;
+        display:none;
+    }
+    
+    .titulo_registro    {
+        margin-top:50px;
+    }
+    
+    .p_registro {
+        text-align:justify;
+        color:white;
+    }
+    
+    .azulado    {
+        width:300px;
+        height:185px;
+        top:395px;
+        left:685px;
+        background-color:#6C5CE7;
+        display:none;
+    }
+    
+    .carnoso    {
+        top:395px;
+        left:1015px;
+        height:150px;
+        width:225px;
+        background-color:rgb(230, 93, 93);
+        cursor:pointer;
+    }
+    
+    .violeta    {
+        top:485px;
+        left:250px;
+        height:60px;
+        width:150px;
+        background-color:#e040fb;
+        cursor:pointer;
+    }
+    
+    .zapatilla  {
+        top:245px;
+        left:1040px;
+        height:125px;
+        width:200px;
+        background-image:url("../../../assets/zapatilla.jpg");
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    }
+    
+    .carnoso:hover{
+        transform: scale(1.2);
+    }
+    
+    .rosa:hover{
+        transform: scale(1.2);
+    }
+
+    .violeta:hover{
+        transform: scale(1.2);
+    }
+
+    .error  {
+        font-size: small;
+        color:red;
+    }
+
+    .flecha {
+        cursor:pointer;
+    }
+
+    @media screen and (max-width:1235px) {
+        .titulo_registro    {
+            margin-top:14px;
+        }
+        
+        .zapatilla  {
+            display:none;
+        }
+
+        .logoImagen {
+            display:none;
+        }
+
+        .logoImagenResponsive   {
+            margin-left:400px;
+            margin-top:30px;
+            height:80px;
+            border-radius:100px;
+            background-image:url("../../../assets/logo.png");
+            background-repeat:no-repeat;
+            background-size:50% 80%;
+        }
+
+        .bg-warning {
+            top:175px;
+            width:300px;
+            left:100px;
+        }
+
+        .carnoso    {
+            width:130px;
+            top:485px;
+            left:270px;
+            height:60px;
+        }
+
+        .violeta    {
+            width:130px;
+            left:100px;
+        }
+
+        .flecha {
+            margin-top:13px;
+        }
+
+        .descripcion    {
+            display:none;
+        }
+
+        .programetas    {
+            display:none;
+        }
+    }
+
+    @media screen and (max-width:1235px) {
+        .bg-warning {
+            display:none;
+        }
+
+        .bg-success {
+            left:300px;
+        }
+
+        .violeta    {
+            width:23%;
+            top:570px;
+            left:300px;
+        }
+
+        .carnoso    {
+            width:23%;
+            top:570px;
+            left:595px;
+        }
+    }
+
+    @media screen and (max-width:1060px) {
+        .bg-success {
+            left:250px;
+        }
+
+        .carnoso    {
+            left:545px;
+            width:260px;
+        }
+
+        .violeta    {
+            left:250px;
+            width:260px;
+        }
+    }
+
+    @media screen and (max-width:1000px) {
+        .bg-success {
+            left:200px;
+        }
+
+        .carnoso    {
+            left:495px;
+        }
+
+        .violeta    {
+            left:200px;
+        }
+    }
+
+    @media screen and (max-width:850px) {
+        .logoImagenResponsive   {
+            margin-left:250px;
+            margin-top:40px;
+            height:100px;
+            background-size:60% 60%;
+        }
+        
+        .bg-success {
+            left:150px;
+        }
+
+        .carnoso    {
+            left:445px;
+        }
+
+        .violeta    {
+            left:150px;
+        }
+    }
+
+    @media screen and (max-width:800px) {
+        .bg-success {
+            left:100px;
+        }
+
+        .carnoso    {
+            left:395px;
+        }
+
+        .violeta    {
+            left:100px;
+        }
+    }
+
+    @media screen and (max-width:730px) {
+        .bg-success {
+            left:80px;
+        }
+
+        .carnoso    {
+            left:375px;
+        }
+
+        .violeta    {
+            left:80px;
+        }
+    }
+
+    @media screen and (max-width:690px) {
+        .bg-success {
+            left:50px;
+        }
+
+        .carnoso    {
+            left:345px;
+        }
+
+        .violeta    {
+            left:50px;
+        }
+    }
+
+    @media screen and (max-width:625px) {
+        .logoImagenResponsive   {
+            margin-left:100px;
+            margin-top:40px;
+            height:100px;
+            background-size:75% 60%;
+        }
+        
+        .bg-success {
+            width:500px;
+            left:50px;
+        }
+
+        .carnoso    {
+            left:345px;
+            width:205px;
+        }
+
+        .violeta    {
+            left:50px;
+            width:205px;
+        }
+    }
+
+    @media screen and (max-width:575px) {
+        .bg-success {
+            width:450px;
+            left:50px;
+        }
+
+        .carnoso    {
+            left:325px;
+            width:175px;
+        }
+
+        .violeta    {
+            left:50px;
+            width:175px;
+        }
+    }
+
+    @media screen and (max-width:530px) {
+        .bg-success {
+            width:400px;
+            left:50px;
+        }
+
+        .carnoso    {
+            left:275px;
+            width:175px;
+        }
+
+        .violeta    {
+            left:50px;
+            width:175px;
+        }
+    }
+    
+    @media screen and (max-width:475px) {
+        .logoImagenResponsive   {
+            margin-left:60px;
+            margin-top:20px;
+            height:100px;
+            background-size:75% 60%;
+        }
+        
+        .programetas    {
+            display:none;
+        }
+    
+        .bg-warning {
+            display:none;
+        }
+    
+        .bg-success {
+            top:100px;
+            height:65%;
+            left:70px;
+            width:325px;
+        }
+
+        .login   {
+            height:14.28%;
+            padding:5px;
+        }
+
+        .labelTipo  {
+            margin-bottom:20px;
+        }
+    
+        .carnoso    {
+            height:66px;
+            margin-top:20px;
+            top:570px;
+            left:245px;
+            width:32%;
+        }
+
+        .violeta    {
+            height:66px;
+            margin-top:20px;
+            top:570px;
+            left:70px;
+            width:32%;
+        }
+    
+        .p_registro {
+            font-size:12px;
+        }
+    
+        .carnoso:hover{
+            transform: scale(1.1);
+        }
+        
+        .rosa:hover{
+            transform: scale(1.1);
+        }
+
+        .violeta:hover{
+            transform: scale(1.1);
+        }
+
+        .flecha {
+            margin-top:7px;
+        }
+    }
+
+    @media screen and (max-width:475px) {
+        .bg-success {
+            height:475px;
+            width:320px;
+        }
+
+        .carnoso    {
+            width:145px;
+            /* top:625px; */
+        }
+
+        .violeta    {
+            width:145px;
+            /* top:625px; */
+        }
+    }
+
+    @media screen and (max-width:450px) {
+        .bg-success {
+            left:60px;
+        }
+
+        .carnoso    {
+            left:240px;
+        }
+
+        .violeta    {
+            left:60px;
+        }
+    }
+
+    @media screen and (max-width:425px) {
+        .bg-success {
+            left:50px;
+        }
+
+        .carnoso    {
+            left:230px;
+        }
+
+        .violeta    {
+            left:50px;
+        }
+
+        .logoImagenResponsive {
+            margin-top:30px;
+            height:80px;
+        }
+    }
+
+    @media screen and (max-width:405px) {
+        .bg-success {
+            left:40px;
+        }
+
+        .carnoso    {
+            left:220px;
+        }
+
+        .violeta    {
+            left:40px;
+        }
+    }
+
+    @media screen and (max-width:385px) {
+        .bg-success {
+            left:30px;
+        }
+
+        .carnoso    {
+            left:210px;
+        }
+
+        .violeta    {
+            left:30px;
+        }
+    }

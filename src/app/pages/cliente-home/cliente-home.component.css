@@ -1,0 +1,127 @@
+#hijo1{
+  height:40px;
+  width:250px;
+  position: absolute;
+  left:0px;
+  top:20px;
+
+}
+
+.hijo1{
+  background-color: #5c73f693;
+  color: white;
+  width: max-content;
+  height: max-content;
+  font-family: Black HanSans;
+  font: bolder;
+  font-size: 3vw;
+}
+
+.rowstefi {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+.colstefi {
+  flex-direction: column;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.tarjeta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.carusel {
+  max-width: 700px;
+  /* min-width: 700px; */
+  max-height: 400px;
+  /* min-height: 400px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Titillium Web;
+  margin-top: 0px;
+  background-size: cover;
+  background-position: center;
+}
+.calendario {
+  color: #5c74f6;
+  margin: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.titulo {
+  font-family: April Fatface;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.523);
+}
+.titulo2 {
+  font-family: Black Han Sans;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: white;
+  font-size: 2vw;
+}
+
+img {
+  max-width: 700px;
+  /* min-width: 700px; */
+  max-height: 400px;
+  /* min-height: 200px; */
+  background-size: cover;
+  background-position: center;
+}
+
+.centrado {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 475px) {
+  .carusel {
+    width: 100vw;
+    max-height: 250px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  img {
+    max-height: 250px;
+    max-width: 100%;
+  }
+
+  .tarjeta{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .hijo1{
+    font-size: 15px;
+  }
+
+  .titulo2 {
+    margin-top: 5px;
+    font-size: 4vw;
+  }
+
+  .buscador {
+    margin-top: 100px !important;
+  }
+
+  .row {
+    margin-top: 30px;
+  }
+
+}

@@ -1,0 +1,92 @@
+<div class='container-fluid'>
+    <div class='row centrado'>
+        <div class='col-10 logoImagenResponsive'></div>
+        <div class='col-4'></div>
+        <div class='col-4 logoImagen'></div>
+        <div class='col-4'></div>
+    </div>
+
+    <div class='recuadro programetas'></div>
+
+    <div class='recuadro centrado bg-warning'>
+        <div class='imagenAmarilla'></div>
+    </div>
+
+    <div class='recuadro bg-success'>
+        <div class='row login'>
+            <label class='reclamo' for="login">Login</label>
+        </div>
+
+        <form [formGroup]='myForm'>
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="text"
+                            name=email
+                            #email 
+                            formControlName='email'
+                            class="form-control" 
+                            placeholder="Email" 
+                            aria-label="Emailname" 
+                            aria-describedby="basic-addon1"
+                            [ngClass]="{'is-invalid':emailValid==false}"
+                            on-keyup = validarEmail();/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <div class="input-group mb-3">
+                    <input  type="password" 
+                            #password
+                            name='password'
+                            formControlName='password'
+                            class="form-control" 
+                            placeholder="Contraseña" 
+                            aria-label="Username" 
+                            aria-describedby="basic-addon1" 
+                            [ngClass]=
+                                "{'is-invalid':passValid==false}"
+                            on-keyup = validarPassword();/>
+                </div>
+            </div>
+
+            <div class='row login'>
+                <button type="button" class="btn btn-light" on-click='validar(email.value, password.value)'>Entra!</button>
+            </div>
+        </form>
+
+            <label *ngIf='!emailValid' class='error'>El campo Email es obligatorio</label>
+            <label *ngIf='emailValid && !passValid' class='error'>
+                El password debe tener <br/> como mínimo 6 carateres
+            </label>
+    </div>
+
+    <div class='recuadro rosa' on-click='redirigir("empresa-registro")'>
+        <div class='row centrado titulo_registro reclamo'>
+            Empresa
+        </div>
+
+        <div class="row centrado p_registro descripcion">
+            
+        </div>
+    </div>
+
+    <div class='recuadro azulado centrado'>
+        <label for="registrate" class='reclamo'></label>
+    </div>
+
+    <div class='recuadro carnoso' on-click='redirigir("cliente-registro")'>
+        <div class='row centrado reclamo titulo_registro'>
+            Cliente
+        </div>
+
+        <div class="row centrado p_registro descripcion">
+            
+        </div>
+    </div>
+
+    <div class='recuadro violeta centrado'>
+        <label for="pideTurno" class='reclamo'></label>
+    </div>
+
+    <div class='recuadro zapatilla'></div>
+</div>

@@ -1,0 +1,55 @@
+<div class="global">
+
+    <div class="container">    
+
+        <div class="contenedor-form">
+
+            <!-- photo perfil -->
+
+            <div class="pic-perfil">
+                
+                <div class="foto">
+                    <img class="imagen" name=img  src="{{user.imagen_url}}" alt=" Not Found ">
+                    
+                    <!-- <div>
+                        <button type="button" class="exit"> Cerrar Sesion </button>
+                    </div> -->
+
+                </div>
+                
+
+                <!-- Fin foto perfil -->
+            
+                <form class="formulario" (input)=handleChange($event)>
+
+                    <input class="input2" type="text" name="imagen_url" placeholder="Imagen"  alter="photo">  <br/><br/>
+
+                    <input class="input2" type="text" name="nombre_cliente" placeholder="{{user.nombre_cliente}}">  <br/><br/>
+
+                    <input class="input2" type="text" name="apellidos_cliente" placeholder="{{user.apellidos_cliente   }}">  <br/><br/>
+
+                    <input class="input2" type="password" name="password" placeholder="Contraseña"> <br/><br/>
+                            
+                    <input class="input2" type="password" name="repeatPassword" placeholder="Confirmar Contraseña">  <br/><br/>
+
+                    <input class="input2" type="text" name="telefono" placeholder="{{user.telefono}}">  <br/><br/>
+                
+                    <div class="btn-container">
+
+                    <button class="boton" type="button" data-toggle="modal" data-target="#modalModificar" >Enviar</button>            
+
+                    </div>
+                </form>    
+
+                
+
+            </div>
+
+        </div> 
+    </div>
+
+
+
+    <app-modal [mensajeModal]="guardarModal" (eventoGuardarPerfil)="subirCambios($event)"></app-modal>
+
+</div>
