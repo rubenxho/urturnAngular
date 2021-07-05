@@ -1,20 +1,30 @@
 .global{
     width: 100%;
-    margin-bottom: 10px;
-    
+    margin-top: 100px;
+    padding-bottom: 20px;   
 }
+
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 10px;
     padding-bottom: 50px;
 }
 input:focus{
     outline: none;
 }
+.input-name {
+    font-size:80%;
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
 
+.ruben{
+    margin-top:15%;
+}
+
+/* Reponsive */
 @media screen and (max-width:475px) {
     .container{
         display: flex;
@@ -29,10 +39,17 @@ input:focus{
     .formulario{
         width: 100%;
     }
-
+    .input-name{
+        margin-top: 20px;
+    }
     .input2 {
         margin-bottom: -25px;
     }
+
+    .ruben{
+        margin-top:90%;
+    }
+
 }
 
 .contenedor-form {
@@ -43,17 +60,14 @@ input:focus{
     align-items: center;
     border-radius: 10px;
     width: 100%;
+    margin-top: 25px;
 }
 
-
 .formulario {
-    /* border-style: solid; */
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-right: 100px;
-    /* border-style: solid; */
+    /* margin-right: 100px; */
 }
 
 .input2{
@@ -64,34 +78,56 @@ input:focus{
     border-radius: 5px;
 }
 
+.btn-container{
+    text-align: center;
+}
+
+
 .boton {
     background-color: #5C74F6;
-    margin: -14px 10px 0px 10px;
-    border-style: none;
-    margin-left: 20px;
     border-radius: 5px;
     color: white;
     width: 100px;
-    height: 50px;
-    font-size: 25px;
+    height: 35px;
+    font-size: auto;
+    border-style: none;
+}
+
+.exit{
+    justify-content: center;
+    width: 500px;
+    height: 30px;
+    background-color: rgb(238, 26, 26);
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    border-style: none;
 }
 
 @media screen and (max-width:475px) {
     
+    .global{
+        margin-top: 75px;
+    }
     .input2{
-
         padding: 5px;
     }
-    
+    .btn-container{
+        flex-direction: column;
+        margin-top: 20px;
+        justify-content: center;
+    }
     .boton{
+        flex-direction: row;
         background-color: #5C74F6;
-        border-style: none;
-        margin: auto 10px 20px 10px;
         border-radius: 5px;
         color: white;
-        width: 100px;
-        height: 25px;
+        width: 150px;
+        height: 30px;
         font-size: 15px
+    }    
+    .exit{
+        width: 350px;
     }
 }
 
@@ -123,17 +159,7 @@ input:focus{
     justify-content: center;
     margin-top: 20px;    
 }
-.exit{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    width: 200px;
-    height: 30px;
-    background-color: #5C74F6;
-    border-style: none;
-    border-radius: 5px;
-    color: white;
-}
+
 @media screen and (max-width:475px) {
 
     .foto{
@@ -142,16 +168,11 @@ input:focus{
         margin-bottom: 15px;
     }
 
-    .categoria{
-        width: 100px;
-    }
     .imagen{
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
-    .exit{
-        width: 100px;
-    }
+
     .pic-perfil{
         display: flex;
         flex-direction: column;

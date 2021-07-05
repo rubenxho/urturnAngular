@@ -7,6 +7,14 @@
 
 }
 
+.tarjetax{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
 .hijo1{
   background-color: #5c73f693;
   color: white;
@@ -47,6 +55,15 @@
   background-size: cover;
   background-position: center;
 }
+.fraseDefecta{
+  text-align: center;
+  font-family: Titillium Web;
+  font-weight: bolder;
+  font-size: 2rem;
+  opacity: 0.5;
+  margin-top: 12%;
+  margin-left: 370px;
+}
 .calendario {
   color: #5c74f6;
   margin: 0px;
@@ -62,11 +79,11 @@
 .titulo2 {
   font-family: Black Han Sans;
   font-weight: bolder;
-  display: flex;
+  position: absolute;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: -400px;
   color: white;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 img {
@@ -86,7 +103,13 @@ img {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 475px) {
+
+
+@media screen and (max-width: 376px) {
+  .tarjetaComponente{
+    margin-left: 23px;
+  }
+
   .carusel {
     width: 100vw;
     max-height: 250px;
@@ -112,16 +135,23 @@ img {
   }
 
   .titulo2 {
-    margin-top: 5px;
-    font-size: 4vw;
+    margin-top: -240px;
+    font-size: 7vw;
   }
 
   .buscador {
     margin-top: 100px !important;
   }
 
-  .row {
+  /* .row {
     margin-top: 30px;
+  } */
+  .container{
+    padding-bottom: 70px;
+  }
+
+  .fraseDefecta{
+    margin-left: 0px;
   }
 
 }

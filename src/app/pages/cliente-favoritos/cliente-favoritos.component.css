@@ -2,6 +2,14 @@
   margin-top: 40px;
   margin-bottom: 100px;
 }
+.fraseDefecta{
+  text-align: center;
+  font-family: Titillium Web;
+  font-weight: bolder;
+  font-size: 2rem;
+  opacity: 0.5;
+  margin-top: 12%;
+}
 @media screen and (max-width: 375px) {
 .row {
     margin-top: 10px;
@@ -20,5 +28,5 @@
   /* margin-left: 8px; */
   justify-content: center;
   align-items: center;
-  padding-bottom: 55px;
+  padding-bottom: 80px;
 }

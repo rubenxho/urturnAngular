@@ -2,12 +2,6 @@
     margin: 0;
 }
 
-/* .global{
-    display:flex;
-    flex-direction: column; 
-    max-width: min(1200px, calc(100vw - 40px));
-    min-width: min(1200px, calc(100vw - 40px));
-} */
 .circulo{
     color: rgb(3, 255, 3);;
 }
@@ -136,18 +130,7 @@
 }
 
 .boton-avanzar-cola{
-    /* background-color: #5C74F6;
-    border-radius: 5px;
-    margin: 5px 0px 0px 0px;
-    color:#fff;
-    border: none;
-    padding: 8px;
-    border-radius: 5px;
-    padding-left: 40px;
-    padding-right: 50px;
-    height: 60px;
-    font-size: 20px; */
-    background-color: #5C74F6;
+    background-color: rgb(238, 26, 26);
     border-radius: 5px;
     color:#fff;
     border: none;
@@ -171,7 +154,7 @@
     margin-right: 20px;
     max-height: 310px;
     min-height: 310px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -268,7 +251,7 @@
 
 
 .global{
-    margin-top: 60px;
+    margin-top: 150px;
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -310,8 +293,21 @@
 
 @media screen and (max-width:390px){
 
-    *{
-
+    .ticket {
+        width: 300px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid #5C74F6;
+        background-color: white;
+        color: #5C74F6;
+        font-weight: bold;
+        position: relative;
+        animation: none;
+        margin-left: 8px;
+        margin-top: 30px;
+        border-radius: 5px;        
     }
     
     .prueba{
@@ -326,12 +322,12 @@
         display: none;
     }
 
-    .ticket{
+    /* .ticket{
         display: none;
-    }
+    } */
 
     .global{
-        margin-top: 30px;
+        margin-top: 120px;
         margin-left: 0;
         margin-right: 0;
     }
@@ -397,190 +393,5 @@
         border: none;
         padding: 6px 7px 6px 7px;
     }
-    
-    /* 
-
-    .contenedor-cola{
-        max-height:initial;
-        overflow-y:initial;
-        overflow-x: initial;
-        margin-bottom: 20px;
-    }
-    
-    .ruben-col{
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 374px;
-    }
-
-    .contenedor-cliente{
-        display: none;
-    }
-
-    .ruben-row{
-        width: 374px;
-    }
-    .ruben-row2{
-        width: 374px;
-    }
-    
-    .ruben-header{
-        padding: 10px;
-        width: 300px;
-        margin-left: 35px;
-    }
-
-    .ruben-formulario{
-        padding: 10px;
-        width: 310px;
-        margin-left: 0px;
-        margin-right: initial;
-    
-    }
-
-    .ruben-input{
-        width: 50px;
-    }
-
-    .ruben-label{
-        margin-right: 5px;
-        font-size: 15px;
-    }
-
-    .ruben-avanzar-cola{
-        margin-top: 20px;
-        margin-left: 120px;
-    }
-
-    .contenedor-cola{
-        margin-left: 38px;
-        width: 300px;
-        margin-right: 0px;
-    }
-    
-    .contenedor-2{
-        margin-top: 20px;
-        margin-bottom: 60px;
-    }
-
-    .boton-avanzar-cola{
-        margin-left:-105px;
-        height: 60px;
-        margin-bottom: 0px;
-    }
-    
-    .ruben-row3{
-        display:none;
-    } */
-
-    /* AQUIIIIIIIIIIIII */
-    /* .contenedor-cola{
-        max-height:initial;
-        overflow-y:initial;
-        overflow-x: initial;
-        margin-bottom: 20px;
-    }
-    
-    .ruben-col{
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 374px;
-    }
-
-    .ruben-row{
-        width: 374px;
-    }
-    .ruben-row2{
-        width: 374px;
-    }
-    
-    
-
-    
-
-    .contenedor-cola{
-        margin-left: 38px;
-        width: 300px;
-        margin-right: 0px;
-    }
-    
-    .contenedor-2{
-        margin-top: 20px;
-        margin-bottom: 60px;
-    }
-
-    .boton-avanzar-cola{
-        margin-left:-105px;
-        height: 60px;
-        margin-bottom: 0px;
-    }
-    
-    .boton-detener-cola{
-        margin-left:-105px;
-        height: 60px;
-        margin-bottom: 0px;
-    }
-
-    .responsive-web{
-        display: none;
-    }
-    
-    .responsive-movil{
-        display: initial;
-        margin-top: 0px;
-        margin-left: 60px;
-    }
-
-    .texto-cuadro2{
-        font-size: 20px; 
-        color: white;
-    }
-    
-    .cuadros-texto{
-        font-size:20px;
-        color: #5C74F6;
-        
-    }
-
-    .cuadros{
-        height: 100px;
-        width: 260px;
-        background-color: white;
-        border: solid #5C74F6;
-    }
-
-    .cuadros:hover{
-        transform: none;
-        background-color: white;
-    }
-    .numero{
-        font-size: 35px;
-        color: #5C74F6;
-        font-weight: bold;
-    }
-
-    .boton-avanzar-cola{
-        margin-top: 15px;
-        border-radius: 5px;
-        color:#fff;
-        border: none;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: center;
-        height: 35px;
-    }
-
-    .boton-detener-cola{
-        margin-top: 15px;
-        border-radius: 5px;
-        color:#fff;
-        border: none;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: center;
-        height: 35px;
-    } */
 }
 

@@ -5,58 +5,82 @@
 
             <!-- photo perfil -->
 
-            <div class="pic-perfil" (input)="handelChange($event)">
+            <div class="pic-perfil">
                 
                 <div class="foto">
                     <img class="imagen" src="{{user.imagen_url}}"  alt=" Not Found ">
-                    
-                    <div  class="categoria">
-                    
-                            <select class="etiquetas" name="categoria" type="text">
-                                <option value="">{{user.categoria}}</option>
-                            <option value="Belleza">Belleza</option>
-                            <option value="Deporte">Deporte</option>
-                            <option value="Moda">Moda</option>
-                            <option value="Ocio">Ocio</option>
-                            <option value="Restauración">Restauración</option>
-                            <option value="Salud">Salud</option>
-                        </select>
-                    
-                    </div>
-
-                    <!-- <div>
-                        <button type="button" class="exit"> Cerrar Sesion </button>
-                    </div> -->
-
                 </div>
 
                 <!-- Fin foto perfil -->
             
-                <form class="formulario">
+                <form class="formulario"  [formGroup]="myForm"(input)="handelChange($event)">
 
-                    <input class="input2" type="text" name="nombre_empresa" placeholder="{{user.nombre_empresa}}">  <br/><br/>
-                    <input class="input2" type="text" name="direccion" placeholder="{{user.direccion}}"> <br><br/>
-                    <input class="input2" type="password" name="password" placeholder="Contraseña">  <br/><br/>
-                    <input class="input2" type="password" name="repeatPassword" placeholder="Confirmar Contraseña">  <br/><br/>
-                    <input class="input2" type="text" name="telefono" placeholder="{{user.telefono}}">  <br/><br/>
-                    <input class="input2" type="url" name="imagen_url" placeholder="Imagen">  <br/><br/>
-                    <input class="input2" type="url" name="logo" placeholder="Logo">  <br/><br/>
+                    <!-- <div  class="categoria"> -->
+                        <p class="input-name" >Categoria:</p>
+                        <select class="etiquetas" name="categoria" type="text">
+                            <option value="">{{user.categoria}}</option>
+                            <option value="belleza">Belleza</option>
+                            <option value="deporte">Deporte</option>
+                            <option value="moda">Moda</option>
+                            <option value="ocio">Ocio</option>
+                            <option value="restauración">Restauración</option>
+                            <option value="salud">Salud</option>
+                        </select> <br class="movil"/>
+                    <!-- </div> -->
+
+                    <p class="input-name" >Imagen de perfil:</p>
+                    <input class="input2" type="url" name="imagen_url" placeholder="Imagen">  <br/>
+                    
+                    <p class="input-name" >Nombre:</p>
+                    <label *ngIf='!nombre_empresa' class='input-name' style="color:red"> El campo nombre es obligatorio </label>
+                    <input class="input2" type="text" name="nombre_empresa" placeholder="{{user.nombre_empresa}}"
+                    [ngClass]="{'is-invalid' : !nombre_empresa}" on-keyup = validarUsername()> <br/>
+                    
+                    <p class="input-name" >Direccion:</p>
+                    <input class="input2" type="text" name="direccion" placeholder="{{user.direccion}}"> <br/>
+                    
+                    <p class="input-name" >Contraseña:</p>
+                    <label *ngIf='nombre_empresa && telefonoValid && !passwordValid' class='input-name' style="color:red"> El password debe tener como mínimo 6 carateres </label>
+                    <input class="input2" type="password" name="password" placeholder="Contraseña"
+                    [ngClass]="{'is-invalid':passwordValid==false}" on-keyup = validarPassword()> <br/>
+                    
+                    <p class="input-name" >Confirmar contraseña:</p>
+                    <label *ngIf='nombre_empresa && telefonoValid && !passwordValid' class='input-name' style="color:red"> El password debe tener como mínimo 6 carateres </label>
+                    <input class="input2" type="password" name="repeatPassword" placeholder="Confirmar Contraseña"
+                    [ngClass]="{'is-invalid':!validarRepeat()}" on-keyup = "validarRepeat()"> <br/>
+                    
+                    <p class="input-name" >Numero de telefono:</p>
+                    <label *ngIf='nombre_empresa  && !telefonoValid' class='input-name' style="color:red"> El teléfono debe contener 9 números </label>
+                    <input class="input2" type="text" name="telefono" placeholder="{{user.telefono}}"
+                    [ngClass]="{'is-invalid':!telefonoValid}" on-keyup = validarTelefono()> <br/>
+                    
+                    <p class="input-name" >Logo:</p>
+                    <input class="input2" type="url" name="logo" placeholder="Logo">  <br/>
 
                     <div class="horario">
-                    <p class="tithis.me-nathis.me left"> Apertura: </p> 
-                    <input class="input2-time" type="time" name="apertura" placeholder="apertura">  <br/><br/>
-                    <p class="time-name rigth">Cierre: </p> 
-                    <input class="input2-time" type="time" name="cierre" placeholder="cierre">  <br/><br/>
-                    </div>
+                    
+                        <p class="time-name "> Apertura: </p>     
+                        <input class="input2-time apertura" type="time" name="apertura" placeholder="apertura" value="{{user.apertura}}">  <br/>
+                    
+                        <p class="time-name">Cierre: </p> 
+                        <input class="input2-time" type="time" name="cierre" placeholder="cierre" value="{{user.cierre}}">  <br/>
+                    
+                    </div> <br class="movil"/>
 
-                    <input class="input2" type="text" name="tiempo_es   pera" placeholder="{{user.tiempo_espera}}">  <br/><br/>
-
-                    <textarea class="descripcion input2" name="descripcion" placeholder="{{user.descripcion}}"></textarea> <br/><br/>
+                    <p class="input-name" >Tiempo de espera:</p>
+                    <input class="input2" type="text" name="tiempo_espera" placeholder="{{user.tiempo_espera}} minutos">  <br/>
+                    
+                    <p class="input-name" >Descripcion:</p>
+                    <textarea class="descripcion input2" name="descripcion" placeholder="{{user.descripcion}}"></textarea> <br/>
                 
                     <div class="btn-container">
 
-                    <button class="boton" data-toggle="modal" data-target="#modalModificar">Enviar</button>            
+                        <button class="boton" data-toggle="modal" data-target="#modalModificar">Enviar</button>            
+                        
+                    <hr>    
 
+                        <button type="button" class="exit" data-toggle="modal" data-target="#exampleModalCenter">  Cerrar sesión </button>
+                    
                     </div>
                 </form>    
             </div>
@@ -65,3 +89,17 @@
 </div>
 
 <app-modal [mensajeModal]="empresaPerfil" (eventoGuardarPerfil)="subirCambios($event)"></app-modal>
+
+<div class="modal fade ruben cierre" tabindex="-1" role="dialog" id='exampleModalCenter' aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-body" id="desplegable">
+            <p style="text-align: center; font-size: 20px;">¿Seguro que quieres cerrar sesión?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" on-click='cerrarSesion()'>Cerrar sesión</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+        </div>
+        </div>
+    </div>
+</div>

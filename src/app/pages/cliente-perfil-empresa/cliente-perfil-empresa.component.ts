@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioEmpresa } from 'src/app/models/usuario-empresa';
 import { LocalServiceService } from 'src/app/services/local-service.service';
 import {Location} from '@angular/common';
+import { Opiniones } from 'src/app/models/opiniones';
+import { ClienteOpinionesResenarService } from 'src/app/services/cliente-opiniones-resenar.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-cliente-perfil-empresa',
@@ -11,6 +14,9 @@ import {Location} from '@angular/common';
   styleUrls: ['./cliente-perfil-empresa.component.css']
 })
 export class ClientePerfilEmpresaComponent implements OnInit {
+  public opinionParaEmpresaPerfiles:Opiniones[]=[];
+
+ 
 
   //favoritos
 
@@ -30,17 +36,22 @@ export class ClientePerfilEmpresaComponent implements OnInit {
   /**********************************/
 
   constructor(
-                private router: Router, private toastr: ToastrService,
-                private localServive: LocalServiceService, private _location: Location
+                private router: Router, 
+                private toastr: ToastrService,
+                private localService: LocalServiceService, 
+                private _location: Location,
+                private opinionesService: ClienteOpinionesResenarService,
+                private lse: LoginService
+
               ) 
               { 
-
                 this.favorito = false;
                 this.frase = "";
 
                 //empresa
 
-                this.local = this.localServive.localElegido;
+                this.local = this.localService.localElegido;
+                console.log("this.localService.localElegido>>>>>>>>>>>>>>>>",this.localService.localElegido)
 
                 /*****************/
                 this.ColaPosicion = 5;
@@ -49,7 +60,7 @@ export class ClientePerfilEmpresaComponent implements OnInit {
               }
 
   fav() {
-    console.log(this.favorito);
+    //console.log(this.favorito);
     this.favorito = !this.favorito;
     if (this.frase === 'Has guardado este lugar a favorito!') {
       this.frase = 'Has cancelado el favorito';
@@ -65,12 +76,40 @@ export class ClientePerfilEmpresaComponent implements OnInit {
     this._location.back();
   }
   /*******************************/
-
   showSucces(){
     this.toastr.success(this.frase);
   }
 
-  ngOnInit(): void {
+  /**********llamar el service para traer los datos de opiniones*********************/
+  getOpiniones(){
+    this.local=  this.localService.localElegido
+    this.opinionesService.getOpinionesAEmpresa(this.local.id_usuario_empresa).subscribe((data:any):void=>{
+      this.opinionParaEmpresaPerfiles=[]
+      
+      for (let i = 0; i < data.length; i++) {
+        this.opinionParaEmpresaPerfiles.push( new Opiniones(
+          data[i].id_opiniones,
+          data[i].id_usuario_cliente,
+          data[i].nombre_cliente,
+          data[i].imagen_url,
+          this.local.id_usuario_empresa,
+          "",
+          "",
+          data[i].nota,
+          data[i].opinion,
+          data[i].fecha
+      ))
+    //console.log("this.opinionParaEmpresaPerfiles>>>>>>>>>>>>>>",this.opinionParaEmpresaPerfiles) // undefined
+    //console.log("this.localServive.localElegido>>>>>>>>>>>>>>",this.localService.localElegido)  // direccion: null
+    }})
   }
 
+  ngOnInit(): void {
+    this.getOpiniones()
+   
+    //imagen_url: "https://www.buenasnuevas.live/wp-content/uploads/2020/12/Starbucks.jpg"
+    //nombre_empresa: "Starbucks"
+    //tiempo_espera: 7
+    //console.log("this.local.id_usuario_empresa>>>>>>>>>>>>>>", this.local.id_usuario_empresa) // undefined
+  }
 }

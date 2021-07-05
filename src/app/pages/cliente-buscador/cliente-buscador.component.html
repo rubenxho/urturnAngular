@@ -3,13 +3,13 @@
     <div class="colb">
         <select type="text" name="Local"  #categoria>
             <option value="">Categoría</option>
-            <option value="Belleza">Belleza</option>
-            <option value="Deporte">Deporte</option>
-            <option value="Hogar">Hogar</option>
-            <option value="Moda">Moda</option>
-            <option value="Ocio">Ocio</option>
-            <option value="Restauración">Restauración</option>
-            <option value="Salud">Salud</option>
+            <option value="belleza">Belleza</option>
+            <option value="deporte">Deporte</option>
+            <option value="hogar">Hogar</option>
+            <option value="moda">Moda</option>
+            <option value="ocio">Ocio</option>
+            <option value="restauración">Restauración</option>
+            <option value="salud">Salud</option>
         </select>
     </div>
     
@@ -17,7 +17,9 @@
 
     
     <div class="colb ">
+        <!-- <label *ngIf='!cpValid' class='input-name' style="color:red"> El codigo postal debe contener 5 dígitos </label> -->
         <input type="text" name="Código Postal" placeholder="C. Postal" #cp>
+        <!-- [ngClass]="{'is-invalid':!cpValid}" on-keyup = validarCp()>     -->
     </div>
 
     <div class="colb" >

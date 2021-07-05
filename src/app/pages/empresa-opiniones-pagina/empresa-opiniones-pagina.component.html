@@ -1,66 +1,7 @@
-<div class="main">
-<!-- Desktop -->
-<ng-container *ngFor="let opinion of opiniones">
-    <div class="global one">
+<div class="global">
 
-        <div class="conteiner">
-            <!-- caja de reseñas -->
-
-            <div class="group">
-                <!-- <div class="user"> -->
-                <!-- <div class="pic-profile"> -->
-
-                <div class="container">
-                    <div class="div-img">
-                        <img class="img" src="{{opinion.imagen_url}}" title="cliente" alt="Foto10">
-                        <div class="text">{{opinion.nombre_cliente}}</div>
-                    </div>
-                </div>
-                <!-- </div> -->
-                <!-- <p class="user-name"> david </p> -->
-                <!-- </div> -->
-
-                <div class="comment">
-                    <p class="comment-user">{{opinion.opinion}}</p>
-                </div>
-
-                <div class="stars">
-                    <div class="valoracion">
-                        <app-nota [nota]="opinion.nota"></app-nota>
-                        <p class="fechaDeOpinion">{{opinion.fecha}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ********************Mobile********************  -->
-    <div class="global two">
-        <!-- reseñas movil -->
-        <div class="group">
-            <!-- Foto, nombre y estrellas -->
-            <div class="user">
-
-                <div class="pic-profile">
-                    <img class="img" src="{{opinion.imagen_url}}" alt="foto de cliente">
-                </div>
-                <!-- Estrellas -->
-                <div class="stars">
-                    <div class="valoracion">
-                        <p class="user-name"> {{opinion.nombre_cliente}} </p>
-                    <app-nota [nota]="opinion.nota"></app-nota>
-                        <p class="fechaDeOpinion">{{opinion.fecha}}</p>
-                    </div>
-                </div>
-            </div>
-            <!--Are Comentario -->
-            <div class="comment">
-                <!-- Comenteario -->
-                <p class="comment-user">{{opinion.opinion}}</p>
-            </div>
-
-        </div>
-    </div>
-
+<ng-container *ngFor="let opinionParaEmpresa of opinionesParaEmpresa">
+    <app-empresa-opiniones [opinionHijo]="opinionParaEmpresa" [isEmpresa]="true"></app-empresa-opiniones>
 </ng-container>
+
 </div>

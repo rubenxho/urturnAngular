@@ -2,40 +2,37 @@
     <div class="card">
         <img src="{{usuarioEmpresa.imagen_url}}" class="card-img-top" alt="" data-bs-toggle="tooltip"
             data-bs-placement="top" title="Más información" routerLink="/cliente-perfil-empresa"
-            (click)="muestraLocal()">
+            (click)="muestraLocal(usuarioEmpresa)">
             
         <div class="card-body">
             <div clase="carde-title-color ">
-                <h4 class="card-title">{{usuarioEmpresa.nombre_empresa}}</h4>
+                <h4 class="card-title nombre">{{usuarioEmpresa.nombre_empresa}}</h4>
             </div>
 
-            <p class="card-text">Tiempo Aprox: {{usuarioEmpresa.tiempo_espera}} Mins</p>
+            <p class="card-text">Tiempo Espera: {{usuarioEmpresa.tiempo_espera}} Mins</p>
             <div class="valoracion">
-
-                <input id="radio1" type="radio" name="estrellas" value="5">
-                <label for="radio1">★</label>
-                <input id="radio2" type="radio" name="estrellas" value="4">
-                <label for="radio2">★</label>
-                <input id="radio3" type="radio" name="estrellas" value="3">
-                <label for="radio3">★</label>
-                <input id="radio4" type="radio" name="estrellas" value="2">
-                <label for="radio4">★</label>
-                <input id="radio5" type="radio" name="estrellas" value="1">
-                <label for="radio5">★</label>
+                <app-nota [nota]="usuarioEmpresa.nota_media"></app-nota>
             </div>
 
             <div>
                 <ng-container *ngIf="!usuarioEmpresa.id_turno; else posicion">
-                    <button type="button" class="btn btn-primary botonCola" id=""
-                        data-toggle="modal" data-target="#comfirmarColaModal">Hacer la cola
-                    </button>
+                    <ng-container *ngIf="usuarioEmpresa.disponible==true; else noshow">
+                        <button type="button" class="btn btn-primary botonCola" id=""
+                            data-toggle="modal" data-target="#comfirmarColaModal" (click)="guardarEmpresa()">Pedir Turno
+                        </button>
+                    </ng-container>
+                    <ng-template #noshow>
+                        <button type="button" disabled class="btn btn-primary botonCola" id=""
+                            data-toggle="modal" data-target="#comfirmarColaModal">No disponible
+                        </button>
+                    </ng-template>
                 </ng-container>
 
                 <ng-template #posicion>
                     <button class="btn btn-primary botonCola " id="numPosicion"> Ticket:{{usuarioEmpresa.id_turno}}</button>
                 </ng-template>
 
-                <span class="corazonGris" [ngClass]="{corazonRed: favorito}">
+                <span class="corazonGris" [ngClass]="{corazonRed: usuarioEmpresa.favorito}">
                     <i class="fas fa-heart" (click)="fav()"></i>
                 </span>
             </div>
@@ -46,7 +43,7 @@
 
 <div class="modal fade" id="comfirmarColaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog  " role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -54,7 +51,7 @@
                 </button>
             </div>
             <div class="modal-body" id="desplegable">
-                <h5 class="modal-title" id="exampleModalLabel">¿Confirmas hacer la cola?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">¿ Deseas pedir turno ?</h5>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="comfirmadoCola()"
@@ -64,4 +61,6 @@
         </div>
     </div>
 </div>
+
+
 

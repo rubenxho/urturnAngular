@@ -1,9 +1,12 @@
 .main {
-  margin-top: 50px;
-  margin-bottom: 70px;
+  margin-top: 120px;
+  margin-bottom: 160px;
 }
-
+.tarjetax-comentarios{
+  padding-bottom: 80px;
+}
 .col {
+  margin-top: -10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,7 +115,7 @@
 }
 
 .valoracion input:checked ~ label {
-  color: #ffff00;
+  color: rgb(236, 194, 6);
 }
 
 .fa-heart {
@@ -145,15 +148,15 @@
 .botones {
   align-content: center;
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 50px;
+  margin-top: 150px;
+  margin-bottom: 10px;
 }
 
 .btn-outline-primary {
   height: 60px;
-  width: 250px;
+  width: 155px;
   font-family: Titillium Web;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bolder;
   background-color: white;
   color: #5c74f6;
@@ -178,20 +181,20 @@
   margin-top: 12%;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   .card {
     margin-bottom: 5px;
     align-content: center;
   }
   #resenaModal {
-    margin-top: 45%;
+    margin-top: 60%;
   }
   .clienteResenado {
     font-family: Titillium Web;
     font-weight: bolder;
   }
   #quitarResenaModal {
-    margin-top: 70%;
+    margin-top: 90%;
   }
   .row {
     margin-top: 10px;

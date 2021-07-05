@@ -1,32 +1,68 @@
 .global{
-    margin: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    margin-top: 100px;
+    padding-bottom: 20px;
 }
+
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 10px;
     padding-bottom: 50px;
 }
 input:focus{
     outline: none;
 }
+
+.input-name {
+    font-size:80%;
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
+
 .categoria{
-    margin-top: 50px;
-    width: 100%;
+    /* margin-top: 50px; */
+    width: 450px;
 }
 
 .etiquetas{
     justify-content: center;
-    width: 200px;
+    width: 740px;
+    height: 45px;
+    border:1px solid #ccc;
+    /* margin-bottom: 20px; */
+}
+
+/* .exit   {
+    margin-bottom:22px;
+    padding:3px;
+} */
+
+.imagen {
+    margin-top:56px;
+    margin-bottom:-10px;
+}
+
+.movil{
+    display: flex;
 }
 
 @media screen and (max-width:475px) {
+    
+    .movil{
+        display: none;    
+    } 
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
     .etiquetas{
         justify-content: center;
-        width: 100px;
+        width: 345px;
+        height: 35px;
     }
     .container{
         display: flex;
@@ -42,12 +78,27 @@ input:focus{
         width: 100%;
     }
     .categoria{
-        width: 100%;
+        width: auto;
         
     }
     .input2 {
         margin-bottom: -25px;
     }
+    .input-name{
+        margin-top: 20px;
+    }
+
+    .centrado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+    }
+
+    .exit   {
+        width: 350px;
+    }
+
 }
 
 .contenedor-form {
@@ -58,22 +109,18 @@ input:focus{
     align-items: center;
     border-radius: 10px;
     width: 100%;
+    margin-top: 25px;
 }
 
 
 .formulario {
-    /* border-style: solid; */
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-right: 100px;
-    /* border-style: solid; */
+    /* margin-right: 100px; */
 }
 
 .input2{
-    /* margin: 5px; */
-    /* margin-bottom: -25px; */
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -83,10 +130,9 @@ input:focus{
 
 .horario{
     display: flex;
-    flex-direction: row;
     width: 100%;
-    height: 5%;
-    margin-bottom: 20px;
+    height: 25px;
+    margin-top: 10px;
 }
 
 .input2-time{
@@ -94,46 +140,84 @@ input:focus{
     box-sizing: border-box;
     border:1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 20px;
-    margin-right: 15%;
+    /* margin-right: 15%; */
 }
 
 .time-name{
+    font-size: 100%;
     margin-right: 5%;
+}
+.apertura{
+    margin-right: 50px;
+}
+
+.btn-container{
+    text-align: center;
 }
 
 .boton {
-
     background-color: #5C74F6;
-    margin: auto 10px 20px 10px;
-    border-style: none;
-    margin-left: 20px;
     border-radius: 5px;
     color: white;
     width: 100px;
-    height: 50px;
-    font-size: 25px;
+    height: 35px;
+    font-size: auto;
+    border-style: none;
+}
+.exit{
+    justify-content: center;
+    width: 500px;
+    height: 30px;
+    background-color: rgb(238, 26, 26);
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    border-style: none;
 }
 
+.modal-content{
+    margin-top: 90%;
+}
+
+.ruben{
+    margin-top:15%;
+}
 @media screen and (max-width:475px) {
     
-    .rigth{
-        margin-left: -17px;
+    .global{
+        margin-top: 75px;
     }
-
     .input2{
         padding: 5px;
     }
 
+    .btn-container{
+        flex-direction: column;
+        margin-top:20px;
+        justify-content: center;
+    }
+
     .boton{
+        flex-direction: row;
         background-color: #5C74F6;
         border-style: none;
-        margin: auto 10px 20px 10px;
         border-radius: 5px;
         color: white;
-        width: 100px;
-        height: 25px;
+        width: 150px;
+        height: 30px;
         font-size: 15px;
+    }
+
+    .horario{
+        margin-top: 20px;
+    }
+
+    .time-name{
+        margin-top:2px;
+        font-size: 80%;
+    }
+    .exit{
+        width: 350px;
     }
 }
 
@@ -166,17 +250,6 @@ input:focus{
     margin-top: 20px;    
 }
 /* boton cerrar sesion */
-.exit{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    width: 200px;
-    height: 30px;
-    background-color: #5C74F6;
-    border-style: none;
-    border-radius: 5px;
-    color: white;
-}
 
 @media screen and (max-width:475px) {
 
@@ -187,18 +260,13 @@ input:focus{
         margin-bottom: 15px;
     }
 
-    .categoria{
-        text-align: center;
-    }
     .imagen{
         display: block;
         margin: auto;
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
-    .exit{
-        width: 100px;
-    }
+
     .pic-perfil{
         display: flex;
         flex-direction: column;

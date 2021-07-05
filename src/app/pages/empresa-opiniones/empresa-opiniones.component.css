@@ -2,6 +2,8 @@
 .global {
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
+  padding-bottom: 5px;
   /* text-align: center; */
 }
 .two {
@@ -64,9 +66,12 @@ img {
   font-family: Titillium Web;
   display: flex;
   margin-top: -30px;
+  color: black;
 }
 .div-img .text {
-  font-family: "Open Sans";
+  font-family: Titillium Web;
+  font-size: 20px;
+  font-weight: bolder;
   position: relative;
   z-index: -1;
   display: block;
@@ -106,6 +111,7 @@ img {
   border-radius: 50%;
 }
 .div-img:hover .text {
+  z-index: 1;
   font-size: 10px;
   -webkit-transform: 0px 0px 2;
   -moz-transform: 0px 0px 2;
@@ -117,6 +123,7 @@ img {
   -moz-transform: translate(0px, 0px) scale(2);
   -o-transform: translate(0px, 0px) scale(2);
   -ms-transform: translate(0px, 0px) scale(2);
+  
 }
 /* Tarjetas donde estan las reñeñas */
 .conteiner {
@@ -132,10 +139,13 @@ img {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  background-color: #b6b6b690;
+  background-color: white;
+  border: solid #5C74F6;
+  /* background-color: #e2e2e2d5; */
   width: 100%;
   margin-bottom: 10px;
   border-radius: 5px;
+  /* z-index: -1; */
 }
 .comment-user {
   font-family: Titillium Web;
@@ -143,7 +153,8 @@ img {
   font-size: 20px;
   overflow-y: auto;
   overflow-x: hidden;
-  width: 580px;
+  width: 450px;
+  padding-right: 10px;
 }
 .comment {
   margin-top: 15px;
@@ -156,15 +167,12 @@ img {
   width: 100%;
   margin-right: 20px;
 }
-.clasificacion {
-  display: flex;
-}
+
 .stars {
-  width: 30%;
+  width: 100%;
   display: flex;
   text-align: end;
-  font-size: 30px;
-  cursor: pointer;
+
 }
 
 .fechaDeOpinion {
@@ -175,10 +183,8 @@ img {
 }
 
 /**********************************************************************************************************/
-
-/* Mobile */
-@media only screen and (max-width: 475px) {
-  .global {
+@media only screen and (max-width: 1300px) {
+.global {
     width: 100%;
     padding: 10px 10px 10px 10px;
   }
@@ -191,31 +197,39 @@ img {
   .group {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 90%;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin: auto;
-    margin-top: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 65px; */
   }
   .main{
     margin-bottom: 65px;
   }
+
   .user {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
     width: 100%;
   }
+    /*
   .user-name {
     font-weight:bolder;
     margin-top: 10px;
-    margin-left: 0px;
+    margin-left: -44px;
     margin-bottom: 0px;
     width: 130px;
     font-family: Titillium Web;
     font-size: 20px; 
     text-align: end;  
+  }
+  */
+
+  .user-name{
+    font-size: 25px;
   }
   .pic-profile {
     width: 100px;
@@ -228,9 +242,10 @@ img {
     overflow: hidden;
     width: 80px;
     height: 80px;
-    margin-left: -80px;
+    margin-left: -50px;
     margin-top: 0px;
   }
+  /**/
   .comment {
     width: 100%;
     padding: 10px;
@@ -249,16 +264,130 @@ img {
     margin-right: -2px;
     margin-top: -25px;
   }
+   
   .stars{
      margin-top: 0px;
-     margin-top: -10px;
+     justify-content: left;
+     align-content: flex-start;
   }
+ /*
   .fechaDeOpinion{
     font-family: Titillium Web;
     font-weight: bolder;
     font-size: 15px;
-    margin-top: -22px;
+    margin-top: -5px;
+    padding-top: 7px;
     width: 130px;
     text-align: end;
+  }*/
+  .estrellaComentario{
+    margin-top: -25px;
   }
+}
+
+
+
+/**********************************************************************************************************/
+/* Mobile */
+@media only screen and (max-width: 375px) {
+  .global {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+  }
+  .two {
+    display: flex;
+  }
+  .one {
+    display: none;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    /* margin-top: 10px;
+    margin-bottom: 65px; */
+  }
+  .main{
+    margin-bottom: 65px;
+  }
+
+  .user {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    width: 100%;
+  }
+    /*
+  .user-name {
+    font-weight:bolder;
+    margin-top: 10px;
+    margin-left: -44px;
+    margin-bottom: 0px;
+    width: 130px;
+    font-family: Titillium Web;
+    font-size: 20px; 
+    text-align: end;  
+  }
+  */
+
+  .user-name{
+    font-size: 25px;
+  }
+  .pic-profile {
+    width: 100px;
+    height: 70px;
+    margin-top: 5px;
+    margin-left: 50px;
+  }
+  img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    margin-left: -50px;
+    margin-top: 0px;
+  }
+  /**/
+  .comment {
+    width: 100%;
+    padding: 10px;
+    align-content: center;
+    margin-top: -8px;
+    word-break: break-all;
+  }
+  .comment-user {
+         width: 100%;
+        text-align: left;
+        font-size: 20px;
+        align-content: left;
+        margin-right: -5px;
+  }
+  .clasificacion {
+    margin-right: -2px;
+    margin-top: -25px;
+  }
+   
+  .stars{
+     margin-top: 0px;
+     justify-content: left;
+     align-content: flex-start;
+  }
+ /*
+  .fechaDeOpinion{
+    font-family: Titillium Web;
+    font-weight: bolder;
+    font-size: 15px;
+    margin-top: -5px;
+    padding-top: 7px;
+    width: 130px;
+    text-align: end;
+  }*/
+  .estrellaComentario{
+    margin-top: -25px;
+  }
+  
 }

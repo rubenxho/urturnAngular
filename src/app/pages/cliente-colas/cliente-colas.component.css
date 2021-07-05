@@ -1,4 +1,7 @@
 /****************************estilos***************************/
+.global{
+    margin-top: 160px;
+}
 
 .container {
     background-color: #ffffff54;
@@ -10,8 +13,7 @@
     justify-content: space-between;    
     width: 790px;
     height: 150px;
-    margin: 30px auto 30px auto;
-    /* margin-top: 50px; */
+    margin: 50px auto 30px auto;
 }
 
 @media screen and (max-width: 376px) {
@@ -25,12 +27,12 @@
         align-items: center;    
         width: 100%;
         height: min-content;
-        margin: 30px 100px auto 0px;
-        /* padding-bottom: 50px; */
+        margin: 50px 100px auto 0px;
     }
 
     .global {
-        padding-bottom: 80px;
+        padding-bottom: 60px;
+        margin-top: 100px;
     }
 }
 
@@ -47,6 +49,8 @@
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
+    margin-top: 6px;
+    margin-left: 0px;
 }
 
 @media screen and (max-width: 376px) {
@@ -140,6 +144,7 @@ i {
     justify-content:space-evenly;
     align-items: center;
     margin-top: 0%;
+    width: 100%;
 }
 
 @media screen and (max-width: 376px) {
@@ -151,7 +156,7 @@ i {
         align-items: center;
         margin-top: -15%;
         margin-bottom: -25%;
-        margin-left: 42px;
+        margin-left: 10px;
         /* margin-right: 10%; */
     }
     .fila {
@@ -196,6 +201,9 @@ i {
     color: white;
     width: 120px;
     height: 50px;
+}
+.boton:focus{
+    outline: none;
 }
 
 @media screen and (max-width: 376px) {
@@ -254,6 +262,12 @@ i {
     font-size: 25px;
 }
 
+.logo-albert{
+    height: 150px;
+    width: 150px;
+    background-color: white;
+}
+
 @media screen and (max-width: 376px) {
     .parrafo {
         margin-top: -2px;
@@ -261,6 +275,12 @@ i {
         font-size: 20px;
         color: #5C74F6;
     }
+    .logo-albert{
+        height: 200px;
+        width: 200px;
+        background-color: white;
+    }
+    
 
     .parrafoP {
         display: flex;
@@ -276,5 +296,5 @@ i {
     font-weight: bolder;
     font-size: 2rem;
     opacity: 0.5;
-    margin-top: 10%;
+    margin-top: 120px;
   }
